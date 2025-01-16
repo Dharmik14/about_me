@@ -1,121 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharmik Thakkar - Mobile App Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dharmik Thakkar | Mobile App Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         :root {
-            --primary-color: #00bcd4;
-            --secondary-color: #ff4081;
+            --primary-color: #4CAF50;
+            --secondary-color: #ff5722;
+            --text-dark: #212121;
+            --text-light: #f5f5f5;
             --background-dark: #121212;
-            --background-light: #f7f7f7;
-            --text-light: #ffffff;
-            --text-dark: #333333;
+            --background-light: #ffffff;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
-            background: var(--background-dark);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
             color: var(--text-light);
-            text-align: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            scroll-behavior: smooth;
         }
 
         body.light-mode {
-            background: var(--background-light);
+            background-color: var(--background-light);
             color: var(--text-dark);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 50px 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 {
             font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-        }
-
-        p, .btn {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            background: var(--primary-color);
-            color: var(--text-light);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         .section {
-            margin-top: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .section h3 {
-            margin-top: 20px;
-            font-size: 1.5rem;
+        .section-heading {
+            margin-bottom: 25px;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            padding: 12px 35px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 1rem;
+        }
+
+        .section-content {
+            text-align: left;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .skill {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .project-card {
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            margin: 10px;
+            width: calc(33% - 20px);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
             color: var(--primary-color);
         }
 
-        .section p {
+        .project-card p {
             font-size: 1rem;
-            line-height: 1.6;
             margin-top: 10px;
         }
 
-        .projects {
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .projects a {
-            color: var(--primary-color);
-            text-decoration: none;
+        .project-link {
             display: inline-block;
-            margin: 8px 0;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            margin-top: 15px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
-        .projects a:hover {
+        .project-link:hover {
             color: var(--secondary-color);
         }
 
         .social-icons {
-            margin-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .social-icons a {
-            font-size: 1.5rem;
-            margin: 10px;
             color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s;
+            font-size: 2rem;
+            transition: color 0.3s ease;
         }
 
         .social-icons a:hover {
@@ -123,125 +173,104 @@
         }
 
         .footer {
-            margin-top: 40px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            text-align: center;
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .toggle-btn {
-            padding: 12px 25px;
-            background: var(--primary-color);
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
             color: var(--text-light);
-            border: none;
-            border-radius: 5px;
             font-weight: bold;
+            border-radius: 50px;
             cursor: pointer;
-            margin-top: 20px;
+            transition: transform 0.3s ease;
         }
 
         .toggle-btn:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .fadeIn {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .light-mode .fadeIn {
-            animation: fadeIn 1s ease-out;
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container fadeIn">
-        <h1>Dharmik Thakkar</h1>
-        <p>Team Lead - Mobile Apps | Flutter | iOS | Android</p>
-        <p>Email: <a href="mailto:dharmikthakkartech@gmail.com">dharmikthakkartech@gmail.com</a></p>
-        <p>Phone: <a href="tel:+919409323663">+91 9409323663</a></p>
-        <p><a href="https://linkedin.com/in/dharmikthakkar" class="btn" target="_blank">LinkedIn</a> 
-        <a href="https://github.com/dharmikthakkar" class="btn" target="_blank">Github</a></p>
-    </div>
-
-    <div class="container section fadeIn">
-        <h2>Experience</h2>
-        <h3>Fero Freight Technologies LLP, Ahmedabad</h3>
-        <p><strong>Team Lead | NOVEMBER 2021 - PRESENT</strong></p>
-        <p>Leading a team in developing robust and scalable Flutter-based mobile applications. Collaborating with cross-functional teams, managing project delivery timelines, and ensuring successful deployment.</p>
-
-        <h3>Mobio Solutions LLP, Ahmedabad</h3>
-        <p><strong>Senior Flutter Developer | MARCH 2019 - OCTOBER 2021</strong></p>
-        <p>Developing mobile apps with Flutter, handling project requirements, debugging issues, and collaborating with backend and design teams to implement effective solutions.</p>
-    </div>
-
-    <div class="container section fadeIn">
-        <h2>Technical Skills & Tools</h2>
-        <div>
-            <span class="skill">Flutter</span>
-            <span class="skill">Dart</span>
-            <span class="skill">Android</span>
-            <span class="skill">iOS</span>
-            <span class="skill">Java</span>
-            <span class="skill">Kotlin</span>
-            <span class="skill">Git</span>
-            <span class="skill">Xcode</span>
-            <span class="skill">Material Design</span>
-            <span class="skill">UI/UX</span>
-            <span class="skill">Agile</span>
-            <span class="skill">Push Notifications</span>
-        </div>
-    </div>
-
-    <div class="container section fadeIn">
-        <h2>Education</h2>
-        <p><strong>NSIT - GTU, Jetalpur</strong> - Bachelors of Engineering in Computer Science</p>
-        <p><strong>JULY 2015 - APRIL 2019 | CGPA 8.19</p>
-    </div>
-
-    <div class="container section fadeIn">
-        <h2>Projects at Fero.ai</h2>
-        <p>Successfully deployed mobile applications for leading logistics companies, providing solutions for tracking, delivery, and real-time communications.</p>
-        <div class="projects">
-            <a href="#">Navigation & Live Location Tracking</a>
-            <a href="#">Live Chat with Operations Team</a>
-            <a href="#">Multilingual & QR/Barcode Scanning</a>
-            <a href="#">Push Notifications Integration</a>
-        </div>
-    </div>
-
-    <div class="container section fadeIn">
-        <h2>Projects at Mobio Solutions LLP</h2>
-        <div class="projects">
-            <a href="#">DTM Plus - Sync with big electric generators</a>
-            <a href="#">Warehouse Management System</a>
-            <a href="#">Complaint Management System</a>
-            <a href="#">Lead Management System</a>
-            <a href="#">Employee Tracking System</a>
-            <a href="#">Shalibhadra App</a>
-        </div>
-    </div>
-
-    <div class="container social-icons fadeIn">
-        <h2>Connect with Me</h2>
-        <a href="https://github.com/dharmikthakkar" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/dharmikthakkar" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/dharmikthakkar" target="_blank"><i class="fab fa-twitter"></i></a>
-    </div>
-
     <div class="container">
-        <button class="toggle-btn" onclick="toggleLightMode()">🌞 Toggle Light Mode</button>
+        <h1>Dharmik Thakkar</h1>
+        <p>Team Lead - Mobile App Developer</p>
+        <a href="mailto:dharmikthakkartech@gmail.com" class="btn">Contact Me</a>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/dharmikthakkar" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/dharmikthakkar" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </div>
 
-    <div class="container footer fadeIn">
+    <div class="container section">
+        <h2 class="section-heading">Experience</h2>
+        <div class="section-content">
+            <h3>Fero Freight Technologies LLP</h3>
+            <p><strong>Team Lead - NOV 2021 - PRESENT</strong></p>
+            <p>Design, develop, test & deploy Flutter apps. Manage the delivery timeline, align business requirements with technical solutions, and lead the mobile app team.</p>
+
+            <h3>Mobio Solutions LLP</h3>
+            <p><strong>Senior Flutter Developer - MAR 2019 - OCT 2021</strong></p>
+            <p>Developed robust mobile apps using Flutter and native Android, debugged issues, and maintained projects on Android Studio and Xcode.</p>
+        </div>
+    </div>
+
+    <div class="container section">
+        <h2 class="section-heading">Skills</h2>
+        <div class="skills">
+            <div class="skill">Flutter</div>
+            <div class="skill">Dart</div>
+            <div class="skill">iOS</div>
+            <div class="skill">Android</div>
+            <div class="skill">Java</div>
+            <div class="skill">Kotlin</div>
+            <div class="skill">Git</div>
+            <div class="skill">Xcode</div>
+        </div>
+    </div>
+
+    <div class="container section">
+        <h2 class="section-heading">Projects</h2>
+        <div class="project-card">
+            <h3>Warehouse Management System</h3>
+            <p>A project to manage inventory using Flutter, with features like live tracking, task assignment, and system notifications.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Lead Management System</h3>
+            <p>An application to manage leads for sales teams, with a focus on customer interaction and seamless data flow.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Employee Tracking System</h3>
+            <p>Real-time employee tracking application integrated with a central dashboard and mobile interface for supervisors.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
+    </div>
+
+    <div class="container footer">
         <p>© 2025 Dharmik Thakkar | Built with ❤️</p>
     </div>
 
+    <button class="toggle-btn" onclick="toggleLightMode()">🌞 Toggle Light Mode</button>
+
     <script>
         function toggleLightMode() {
-            document.body
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+
+</body>
+
+</html>
