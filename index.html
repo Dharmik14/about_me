@@ -3,50 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Your Name - Mobile App Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #ffcc00;
+            --secondary-color: #ff5733;
+            --bg-light: #f4f4f4;
+            --bg-dark: #1a1a2e;
+            --text-light: #fff;
+            --text-dark: #333;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
         }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 50px auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
         }
-        h1 { color: #333; }
-        p { font-size: 18px; }
-        .projects {
-            margin-top: 20px;
+
+        h1 {
+            font-size: 40px;
+            color: var(--primary-color);
+            animation: fadeIn 1.5s ease-in-out;
         }
-        .projects a {
-            display: block;
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
             margin: 10px;
+            color: #fff;
+            background: var(--secondary-color);
             text-decoration: none;
-            color: #007bff;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff794d;
+        }
+
+        .section {
+            padding: 40px 20px;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .dark-mode .section {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            padding: 8px 15px;
+            border-radius: 5px;
             font-weight: bold;
         }
+
+        .projects a {
+            display: block;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .projects a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        .toggle-btn {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Your Name</h1>
-        <p>Welcome to my portfolio! Here are some of my projects:</p>
-
-        <div class="projects">
-            <a href="https://github.com/yourusername/project1" target="_blank">Project 1</a>
-            <a href="https://github.com/yourusername/project2" target="_blank">Project 2</a>
-        </div>
-
-        <p>Contact me at: your.email@example.com</p>
+        <p>👋 Hi, I'm a passionate <strong>Mobile App Developer</strong> who builds amazing applications for Android & iOS.</p>
+        <a href="mailto:your.email@example.com" class="btn">Contact Me</a>
     </div>
+
+    <div class="container section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">Flutter</div>
+            <div class="skill">Dart</div>
+            <div class="skill">Vue.js</div>
+            <div class="skill">Firebase</div>
+            <div class="skill">REST APIs</div>
+            <div class="skill">iOS Development</div>
+            <div class="skill">Android Development</div>
+        </div>
+    </div>
+
+    <div class="container section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <a href="https://github.com/yourusername/project1" target="_blank">📱 Project 1 - App Name</a>
+            <a href="https://github.com/yourusername/project2" target="_blank">🚀 Project 2 - App Name</a>
+            <a href="https://github.com/yourusername/project3" target="_blank">🔧 Project 3 - App Name</a>
+        </div>
+    </div>
+
+    <div class="container section">
+        <h2>Experience</h2>
+        <p>📌 <strong>Company Name</strong> - Mobile App Developer (YYYY - Present)</p>
+        <p>📌 <strong>Previous Company</strong> - Junior Developer (YYYY - YYYY)</p>
+    </div>
+
+    <div class="container section social-icons">
+        <h2>Connect with Me</h2>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <div class="container">
+        <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    </div>
+
+    <div class="container footer">
+        <p>© 2025 Your Name | Built with ❤️</p>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 
 </body>
 </html>
