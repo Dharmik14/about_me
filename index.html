@@ -8,99 +8,98 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         :root {
-            --primary-color: #ffcc00;
-            --secondary-color: #ff5733;
-            --bg-light: #f4f4f4;
-            --bg-dark: #1a1a2e;
-            --text-light: #fff;
-            --text-dark: #333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
+            --primary-color: #00bcd4;
+            --secondary-color: #ff4081;
+            --background-dark: #121212;
+            --background-light: #f7f7f7;
+            --text-light: #ffffff;
+            --text-dark: #333333;
         }
 
         body {
-            background: var(--bg-dark);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-dark);
             color: var(--text-light);
             text-align: center;
-            transition: 0.5s;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .light-mode {
-            background: var(--bg-light);
+        body.light-mode {
+            background: var(--background-light);
             color: var(--text-dark);
         }
 
         .container {
-            max-width: 900px;
-            margin: 50px auto;
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
         }
 
         h1 {
-            font-size: 40px;
+            font-size: 3rem;
+            margin-bottom: 20px;
             color: var(--primary-color);
-            animation: fadeIn 1.5s ease-in-out;
+            text-transform: uppercase;
         }
 
-        p {
-            font-size: 18px;
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        p, .btn {
+            font-size: 1rem;
             margin: 10px 0;
         }
 
         .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            color: #fff;
-            background: var(--secondary-color);
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: var(--text-light);
             text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: #ff794d;
+            background: var(--secondary-color);
         }
 
         .section {
-            padding: 40px 20px;
-            margin-top: 30px;
+            margin-top: 40px;
             background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
             border-radius: 10px;
-            animation: fadeInUp 1s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .light-mode .section {
-            background: rgba(255, 255, 255, 0.2);
+        .section h3 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+        .section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 10px;
         }
 
-        .skill {
-            background: var(--primary-color);
-            color: var(--bg-dark);
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-weight: bold;
+        .projects {
+            text-align: left;
+            margin-top: 20px;
         }
 
         .projects a {
-            display: block;
-            text-decoration: none;
             color: var(--primary-color);
-            font-size: 18px;
-            margin: 10px 0;
+            text-decoration: none;
+            display: inline-block;
+            margin: 8px 0;
+            font-size: 1.1rem;
+            transition: color 0.3s;
         }
 
         .projects a:hover {
@@ -112,148 +111,123 @@
         }
 
         .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-            font-size: 24px;
+            font-size: 1.5rem;
+            margin: 10px;
             color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .social-icons a:hover {
             color: var(--secondary-color);
         }
 
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         .toggle-btn {
+            padding: 12px 25px;
             background: var(--primary-color);
-            color: var(--bg-dark);
+            color: var(--text-light);
             border: none;
-            padding: 10px;
             border-radius: 5px;
-            cursor: pointer;
             font-weight: bold;
+            cursor: pointer;
             margin-top: 20px;
         }
 
-        .light-mode .toggle-btn {
-            color: var(--text-dark);
-        }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            opacity: 0.7;
+        .toggle-btn:hover {
+            background: var(--secondary-color);
         }
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .fadeIn {
+            animation: fadeIn 1s ease-out;
         }
 
+        .light-mode .fadeIn {
+            animation: fadeIn 1s ease-out;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container fadeIn">
         <h1>Dharmik Thakkar</h1>
-        <p>👋 Hi, I'm a passionate <strong>Team Lead - Mobile Apps</strong> with over 6 years of experience in Flutter, iOS & Android development.</p>
+        <p>Team Lead - Mobile Apps | Flutter | iOS | Android</p>
         <p>Email: <a href="mailto:dharmikthakkartech@gmail.com">dharmikthakkartech@gmail.com</a></p>
         <p>Phone: <a href="tel:+919409323663">+91 9409323663</a></p>
-        <p><a href="https://linkedin.com/in/dharmikthakkar" target="_blank">LinkedIn</a> | <a href="https://github.com/dharmikthakkar" target="_blank">Github</a> | <a href="https://stackoverflow.com/users/your-id" target="_blank">StackOverflow</a></p>
+        <p><a href="https://linkedin.com/in/dharmikthakkar" class="btn" target="_blank">LinkedIn</a> 
+        <a href="https://github.com/dharmikthakkar" class="btn" target="_blank">Github</a></p>
     </div>
 
-    <div class="container section">
+    <div class="container section fadeIn">
         <h2>Experience</h2>
-        <h3>Fero Freight Technologies LLP, Ahmedabad - Team Lead</h3>
-        <p><strong>NOVEMBER 2021 - PRESENT</strong></p>
-        <ul>
-            <li>Design, Develop, Test & Deploy Flutter Apps and manage delivery timelines</li>
-            <li>Communicate with client for aligning business requirements & technical solutions</li>
-            <li>Lead and manage the mobile app team</li>
-            <li>Collaborate with design and backend/API teams to create robust systems</li>
-            <li>Code Reviews & Interview candidates</li>
-        </ul>
+        <h3>Fero Freight Technologies LLP, Ahmedabad</h3>
+        <p><strong>Team Lead | NOVEMBER 2021 - PRESENT</strong></p>
+        <p>Leading a team in developing robust and scalable Flutter-based mobile applications. Collaborating with cross-functional teams, managing project delivery timelines, and ensuring successful deployment.</p>
 
-        <h3>Mobio Solutions LLP, Ahmedabad - Senior Flutter Developer</h3>
-        <p><strong>MARCH 2019 - OCTOBER 2021</strong></p>
-        <ul>
-            <li>Prepare Project Scope & Requirement Documentation</li>
-            <li>Convert app design into robust mobile apps using Flutter and Native Android</li>
-            <li>Debug & solve issues in existing projects</li>
-            <li>Update apps to the latest OS releases</li>
-        </ul>
+        <h3>Mobio Solutions LLP, Ahmedabad</h3>
+        <p><strong>Senior Flutter Developer | MARCH 2019 - OCTOBER 2021</strong></p>
+        <p>Developing mobile apps with Flutter, handling project requirements, debugging issues, and collaborating with backend and design teams to implement effective solutions.</p>
     </div>
 
-    <div class="container section">
+    <div class="container section fadeIn">
         <h2>Technical Skills & Tools</h2>
-        <ul>
-            <li>Flutter, Dart, Java, Kotlin, Git</li>
-            <li>Android, iOS, Xcode, Android Studio</li>
-            <li>MVVM, MVC, Clean Architecture</li>
-            <li>Google Play Store, App Store</li>
-            <li>Responsive Design, Material Design</li>
-            <li>Third-Party APIs Integration</li>
-            <li>Client Communication, APIs/Backend structuring</li>
-        </ul>
+        <div>
+            <span class="skill">Flutter</span>
+            <span class="skill">Dart</span>
+            <span class="skill">Android</span>
+            <span class="skill">iOS</span>
+            <span class="skill">Java</span>
+            <span class="skill">Kotlin</span>
+            <span class="skill">Git</span>
+            <span class="skill">Xcode</span>
+            <span class="skill">Material Design</span>
+            <span class="skill">UI/UX</span>
+            <span class="skill">Agile</span>
+            <span class="skill">Push Notifications</span>
+        </div>
     </div>
 
-    <div class="container section">
+    <div class="container section fadeIn">
         <h2>Education</h2>
-        <p><strong>NSIT - GTU, Jetalpur</strong> - Bachelors of Engineering in Computer</p>
-        <p><strong>JULY 2015 - APRIL 2019</strong>, CGPA: 8.19</p>
+        <p><strong>NSIT - GTU, Jetalpur</strong> - Bachelors of Engineering in Computer Science</p>
+        <p><strong>JULY 2015 - APRIL 2019 | CGPA 8.19</p>
     </div>
 
-    <div class="container section">
+    <div class="container section fadeIn">
         <h2>Projects at Fero.ai</h2>
-        <p>Successful Deployment of more than twelve Apps for leading Third-Party Logistics (3PL), Distributors, Freight Forwarders, and Manufacturers.</p>
-        <ul>
-            <li>Technology Stack: Flutter - Android, iOS, Dart</li>
-            <li>Role: Team Lead - Mobile App Development</li>
-        </ul>
-
-        <h4>Experienced with:</h4>
-        <ul>
-            <li>Navigation & Live Location Tracking using Google Maps</li>
-            <li>Live Chat with Operations team using Websockets</li>
-            <li>Upload Delivery proofs (Photos, Videos, Sign-on Glass)</li>
-            <li>Multilingual & QR/Barcode Scanning Support</li>
-            <li>Integration with Third-Party Libraries & Real-Time Push Notifications</li>
-        </ul>
+        <p>Successfully deployed mobile applications for leading logistics companies, providing solutions for tracking, delivery, and real-time communications.</p>
+        <div class="projects">
+            <a href="#">Navigation & Live Location Tracking</a>
+            <a href="#">Live Chat with Operations Team</a>
+            <a href="#">Multilingual & QR/Barcode Scanning</a>
+            <a href="#">Push Notifications Integration</a>
+        </div>
     </div>
 
-    <div class="container section">
+    <div class="container section fadeIn">
         <h2>Projects at Mobio Solutions LLP</h2>
-        <h4>Technology Stack: Flutter, Dart</h4>
-        <p>Role: Sr. Mobile App Developer</p>
-        <ul>
-            <li>DTM Plus - Sync with big electric generators</li>
-            <li>Warehouse Management System - Inventory management</li>
-        </ul>
-
-        <h4>Technology Stack: Native Android, Java, iOS</h4>
-        <p>Role: Sr. Mobile App Developer</p>
-        <ul>
-            <li>Complaint Management System for after-sales services</li>
-            <li>Lead Management System</li>
-            <li>Employee Tracking System</li>
-            <li>Re-hydration app for hydration reminders</li>
-            <li>Shalibhadra App for goal setting for brokers</li>
-        </ul>
-
-        <h4>Technology Stack: Native Android, Kotlin, iOS</h4>
-        <p>Role: Sr. Mobile App Developer</p>
-        <ul>
-            <li>Lily & Cabinets - E-Commerce app for furniture</li>
-            <li>Glimpulse - Custom animation tool</li>
-        </ul>
+        <div class="projects">
+            <a href="#">DTM Plus - Sync with big electric generators</a>
+            <a href="#">Warehouse Management System</a>
+            <a href="#">Complaint Management System</a>
+            <a href="#">Lead Management System</a>
+            <a href="#">Employee Tracking System</a>
+            <a href="#">Shalibhadra App</a>
+        </div>
     </div>
 
-    <div class="container section social-icons">
+    <div class="container social-icons fadeIn">
         <h2>Connect with Me</h2>
         <a href="https://github.com/dharmikthakkar" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/dharmikthakkar" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -261,18 +235,13 @@
     </div>
 
     <div class="container">
-        <button class="toggle-btn" onclick="toggleLightMode()">☀️ Toggle Light Mode</button>
+        <button class="toggle-btn" onclick="toggleLightMode()">🌞 Toggle Light Mode</button>
     </div>
 
-    <div class="container footer">
+    <div class="container footer fadeIn">
         <p>© 2025 Dharmik Thakkar | Built with ❤️</p>
     </div>
 
     <script>
         function toggleLightMode() {
-            document.body.classList.toggle("light-mode");
-        }
-    </script>
-
-</body>
-</html>
+            document.body
